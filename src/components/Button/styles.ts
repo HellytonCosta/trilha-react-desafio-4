@@ -1,17 +1,15 @@
+// styles.ts
 import styled from 'styled-components';
 
+export const ButtonContainer = styled.button<{ disabled?: boolean }>(({ disabled }) => `
+  background-color: ${disabled ? '#ccc' : '#007bff'};
+  color: ${disabled ? '#666' : 'white'};
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: ${disabled ? 'not-allowed' : 'pointer'};
 
-export const ButtonContainer = styled.button`
-    width: 100%;
-    height: 42px;
-    background-color: #81259D;
-    color: #FFF;
-
-    border: 1px solid #81259D;
-    border-radius: 21px;
-
-    &:hover {
-        opacity: 0.6;
-        cursor:pointer;
-    }
-`
+  &:hover {
+    background-color: ${disabled ? '#ccc' : '#0056b3'};
+  }
+`);
